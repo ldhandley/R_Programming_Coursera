@@ -1,5 +1,5 @@
 corr <- function(directory,threshold=0){
-  growing_data_frame = data.frame() ##this will be a dataframe containing all nitrate & sulfate data that we can correlate in the end
+  threshhold_list <- vector()
   for(i in 1:332){
     original_i <- i
     if(i<10){
@@ -13,11 +13,13 @@ corr <- function(directory,threshold=0){
     }
     temp <- read.table(paste(directory,"/",i,".csv",sep=""),header=TRUE, sep=",")
     if(complete(directory,original_i)$nobs > threshold){
-      growing_data_frame <- rbind(growing_data_frame,c(temp$sulfate,temp$nitrate))
+      threshhold_list <- append(threshhold_list, i) ##builds list of files that meets threshhold requirement
     }
   } 
-  names(growing_data_frame) <- c("sulfate","nitrate")
-  growing_data_frame
+  cor_list <- numeric(length=0)
+  for(j in threshhold_list){
+    temp <- read.table(paste(directory,"/",j,".csv",sep=""),header=TRUE, sep=",")
+    cor_list <- append(cor_list, cor(x=temp$sulfate,y=temp$nitrate,use="complete.obs"))
+  }
+  cor_list
 }
-
-##NEED TO GET RID OF NA VALUES BEFORE ADDING TO GROWING_DATA_FRAME
