@@ -1,0 +1,12 @@
+sample.interval=20000
+"rnorm" "simpleFunction" 
+"rnorm" "simpleFunction" 
+"rnorm" "simpleFunction" 
+"rnorm" "simpleFunction" 
+"rnorm" "simpleFunction" 
+"make.callContext" "cmpCall" "cmp" "h" "tryInline" "cmpCall" "cmp" "cmpForBody" "h" "tryInline" "cmpCall" "cmp" "h" "tryInline" "cmpCall" "cmp" "genCode" "cmpfun" "doTryCatch" "tryCatchOne" "tryCatchList" "tryCatch" "compiler:::tryCmpfun" "simpleFunction" 
+"rnorm" "simpleFunction" 
+"rnorm" "simpleFunction" 
+"rnorm" "simpleFunction" 
+"rnorm" "simpleFunction" 
+"rnorm" "simpleFunction" 
